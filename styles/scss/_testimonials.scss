@@ -1,0 +1,118 @@
+.testimonials-grid {
+  margin-block: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
+}
+
+.testimonial {
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: min(85%, 70rem);
+  margin-inline: auto;
+}
+
+.testimonial:first-child {
+  grid-area: one;
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 2rem;
+
+  .profile-picture {
+    border: 3px solid var(--clr-secondary-400);
+  }
+}
+
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+  grid-area: four;
+
+  .profile-picture {
+    border: 3px solid var(--clr-primary-400);
+  }
+}
+
+.testimonial:nth-child(5) {
+  grid-area: five;
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+  align-items: center;
+  line-height: 1.5em;
+}
+
+.profile-picture {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.category {
+  opacity: 50%;
+  font-size: var(--fs-300);
+}
+
+.testimnoal-preview {
+  font-weight: 700;
+  font-size: var(--fs-500);
+  margin-bottom: 1rem;
+  line-height: 1.3em;
+}
+
+.testimonial-quote {
+  opacity: 70%;
+  line-height: 1.55em;
+}
+
+@media (min-width: 760px) and (max-width: 1200px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, minmax(13rem, 1fr));
+    grid-template-rows:
+      minmax(min-content, 17.6rem) minmax(min-content, 16.3rem)
+      minmax(min-content, 14.5rem);
+    grid-template-areas:
+      "one one two"
+      "three four four"
+      "five five five";
+    width: 80%;
+    margin: 5rem auto;
+    gap: 1rem;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(min-content, 17.8rem) minmax(
+        min-content,
+        16.3rem
+      );
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    width: 75%;
+    margin: 5rem auto;
+  }
+
+  .testimonial {
+    width: 100%;
+  }
+}
